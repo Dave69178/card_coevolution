@@ -11,7 +11,7 @@ class Deck:
     Simplified representation of a deck of cards. Only count of each suit in deck is maintained.
 
     Attributes:
-        suit_counts: List of lenght 4, each element counts the number of each suit - hearts, diamonds, clubs, and spades respectively
+        suit_counts: List of length 4, each element counts the number of each suit - hearts, diamonds, clubs, and spades respectively
     """
     def __init__(self, suit_counts=None) -> None:
         if suit_counts is None:

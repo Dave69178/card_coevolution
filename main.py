@@ -1,6 +1,6 @@
 from coevolution import Evolution
 import numpy as np
-from plot_data import plot_evolution
+from plot_data import plot_evolution, plot_suit_comparisons
 
 def single_run(num_steps, host_start=None, para_start=None):
     evo = Evolution()
@@ -17,6 +17,11 @@ def single_run_and_plot(num_steps, host_start=None, para_start=None):
     plot_evolution(host_data, para_data)
 
 
+def single_run_and_plot_suit_comparisons(num_steps, host_start=None, para_start=None):
+    host_data, para_data = single_run(num_steps, host_start=host_start, para_start=para_start)
+    plot_suit_comparisons(host_data, para_data)
+
+
 def repeat_and_plot_avg(num_steps, num_repeats, host_start=None, para_start=None):
     host_avg_data = np.array([[0,0,0,0] for i in range(num_steps + 1)])
     para_avg_data = np.array([[0,0,0,0] for i in range(num_steps + 1)])
@@ -29,7 +34,10 @@ def repeat_and_plot_avg(num_steps, num_repeats, host_start=None, para_start=None
 # Uncomment code lines for simulation examples:
 
 # Perform single run for a given number of timesteps - host and parasite start with random hands
-single_run_and_plot(10)
+#single_run_and_plot(15)
+
+# Perform single run and plot comparisons of each suit over time between host and parasite
+single_run_and_plot_suit_comparisons(50)
 
 # Perform single run for given number of timesteps - host and parasite start with given hands
 #single_run_and_plot(10, host_start=[12,0,0,0], para_start=[3,3,3,3])
