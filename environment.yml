@@ -1,0 +1,7 @@
+name: coevolution
+channels:
+  - defaults
+dependencies:
+  - matplotlib=3.6.*
+  - numpy=1.23.*
+  - python=3.10.*
